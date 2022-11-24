@@ -1,0 +1,26 @@
+version: '3'
+services:
+  mysqlhela:
+    image: mysql:5.7
+    restart: always
+    container_name: mysqlhela
+    environment:
+      MYSQL_DATABASE: tpachato
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: hela
+      MYSQL_ROOT_PASSWORD: hela
+
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+
+  spring-back:
+    image: heladarguechi/achat:latest
+    container_name: achattp
+    ports:
+      - 8089:8089
+    depends_on:
+      - mysqlhela
+    expose:
+      - 8089
