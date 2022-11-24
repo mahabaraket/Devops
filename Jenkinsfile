@@ -52,7 +52,7 @@ pipeline {
 			steps {
 				sh 'mvn clean deploy -DskipTests'
           }
-        }*/
+        }
 	  
      stage('DOCKER build image') {
       steps {
@@ -84,7 +84,7 @@ pipeline {
          		sh 'docker-compose up -d'
       }
     }
-	 
+	 */
   }
   post {
     success { mail to: "mahaa.baraket@gmail.com",
