@@ -60,7 +60,7 @@ pipeline {
         sh 'docker build -t mahabara/achat1 .'
 
       }
-    }*/
+    }
 	  
      stage('DOCKER login') {
       steps {
